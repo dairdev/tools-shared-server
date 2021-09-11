@@ -1,0 +1,415 @@
+/* CSS Variables */
+:root {
+    --main-bg-color: #1f2227;
+    --main-bg-darker-color: #1a1d21;
+    --alternative-bg-color: #2a333b;
+    --main-fg-color: #dfdfdf;
+    --accent-bg-color: #dfdfef;
+    --accent-fg-color: #0078d2;
+    --light-bg-color: #f5f5f5;
+    --light-fg-color: #7f7f7f;
+    --danger-bg-color: #85241d;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    font-size: 13px;
+    font-weight: 380;
+    letter-spacing: 1px;
+    color: var(--main-fg-color);
+    background-color: var(--main-bg-color);
+}
+
+/* HTML5 display-role reset for older browsers */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a,
+button{
+    text-decoration: none;
+    transition: all 0.5s ease;
+    padding: 0.3em;
+}
+button {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+	supported by Chrome and Opera */
+    cursor: pointer;
+    background-color: var(--accent-fg-color);
+}
+
+a:hover,
+a:hover i,
+a:hover .fa,
+button:hover {
+    color: var(--accent-fg-color);
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="search"],
+select {
+    height: 1.9em;
+    background-color: var(--light-bg-color);
+}
+input {
+    border: none;
+}
+.fa {
+    color: var(--main-fg-color);
+}
+
+td .fa,
+button .fa {
+    margin-right: .3em;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.window-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--alternative-bg-color);
+}
+.window-title .fa{
+	margin-right: .3em;
+	margin-left: .3em;
+}
+.search-control .fa {
+	position: absolute;
+	color: var(--light-fg-color);
+	margin-top: 0.3em;
+	margin-left: 0.3em;
+}
+.search-control input {
+	text-indent: 1.4em;
+}
+
+@media only screen and (min-device-width : 320px) {
+	body {
+		font-size: 16px;
+	}
+	input[type="text"],
+	input[type="number"],
+	input[type="search"],
+	input[type="email"]{
+		width: 100%;
+	}
+	.window-title button{
+		font-size: 20px;
+	}
+	#sidebar {
+		width: 3.5em;
+		margin-right: .3em;
+		text-align: center;
+	}
+	#workspace {
+		padding: 0 .3em;
+		width: calc(100% - 4em);
+	}
+
+	#sidebar li a {
+		height: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 0px 1px 0px #333;
+	}
+	#sidebar li a .fa {
+		font-size: 1.6rem;
+	}
+	#sidebar li a.active {
+		background-color: var(--main-fg-color);
+	}
+	#sidebar li a.active .fa {
+		color: var(--accent-fg-color);
+	}
+	#sidebar-logo {
+		width: 3.5em;
+	}
+	#sidebar .fa {
+		font-size: xx-large;
+	}
+
+	#browser-workspace,
+	#sql-workspace {
+		width: 100%;
+	}
+	#appbar {
+		justify-content: space-between;
+		padding: .5em;
+	}
+	#appbar button {
+		color: var(--main-fg-color);
+	}
+	#browser-sidenav,
+	#sql-explorer {
+		display: none;
+	}
+	#browser-paths {
+		background-color: var(--alternative-bg-color);
+	}
+	#browser-paths a {
+		color: var(--main-fg-color);
+	}
+	#browser-paths {
+		padding: .3em 0;
+	}
+	#browser-file-header {
+		display: flex;
+		justify-content:space-between;
+		background-color: var(--alternative-bg-color);
+		padding: .5em;
+	}
+	#browser-files-list table {
+		width: 100%;
+	}
+	#browser-files-list table tbody {
+		width: 100%;
+		background-color: #fafafa;
+	}
+	#browser-files-list table th,
+	#browser-files-list table td{
+		padding: .5em;
+	}
+	#browser-files-list table thead tr {
+		background-color: var(--alternative-bg-color);
+	}
+	#browser-files-list table tbody tr:nth-child(even) {
+		background-color: var(--main-fg-color);
+	}
+	#browser-files-list table td label input {
+		background-color: none;
+		border: solid 2px #52575d;
+	}
+	#browser-files-list table td .fa,
+	#browser-files-list table td,
+	#browser-files-list table td a {
+		color: var(--main-bg-color);
+	}
+	#browser-files-list table td a:hover,
+	#browser-files-list table td a:hover i.fa{
+		color: var(--accent-fg-color);
+	}
+	#browser-files-list table td a {
+		color: var(--main-bg-color);
+	}
+	#browser-files-list table td a:hover .fa-folder {
+		display: none;
+	}
+	#browser-files-list table td a .fa-folder-open {
+		display: none;
+	}
+	#browser-files-list table td a:hover .fa-folder-open {
+		display: inline-block;
+	}
+	#browser-files-table table th:nth-child(2),
+	#browser-files-table table td:nth-child(2),
+	#browser-files-table table th:nth-child(3),
+	#browser-files-table table td:nth-child(3),
+	#browser-files-table table th:nth-child(4),
+	#browser-files-table table td:nth-child(4){
+		display: none;
+	}
+
+	#sql-editor,
+	#sql-data,
+	#sql-logs {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-device-width : 768px) {
+	body {
+		font-size: 14px;
+	}
+	input[type="text"],
+	input[type="number"],
+	input[type="search"],
+	input[type="email"]{
+		width: auto;
+	}
+	.window-title button{
+		font-size: 14px;
+	}
+	#browser-sidenav {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--alternative-bg-color);
+		width: 17vw;
+	}
+	#browser-sidenav-links {
+		display: flex;
+		flex-direction: column;
+	}
+	#browser-sidenav-links a{
+		color: var(--main-fg-color);
+	}
+	#browser-files-table table th:nth-child(2),
+	#browser-files-table table td:nth-child(2),
+	#browser-files-table table th:nth-child(3),
+	#browser-files-table table td:nth-child(3),
+	#browser-files-table table th:nth-child(4),
+	#browser-files-table table td:nth-child(4){
+		display: table-cell;
+	}
+	#sql-explorer {
+		display: flex;
+		border-right: solid 1px var(--alternative-bg-color);
+	}
+	#sql-explorer-connections {
+		padding: 5px;
+	}
+	#sql-explorer-connections .flex-row .fa {
+		width: 16px;
+	}
+	#sql-explorer-connections .flex-row {
+		margin-bottom: 5px;
+		align-items: baseline;
+	}
+	#sql-explorer-connections .flex-row .fa {
+		width: 16px;
+		margin-right: .3em;
+	}
+	#sql-filter-explorer-text {
+		border-bottom: solid 1px var(--alternative-bg-color);
+	}
+	#sql-explorer-connections select,
+	#sql-filter-explorer-text input {
+		display: block;
+		width: 100%;
+	}
+	#sql-filter-types button{
+		display: block;
+		width: 33%;
+	}
+	#sql-explorer-content {
+		width: 27vw;
+		overflow: auto;
+		height: calc(100vh - 9em);
+		background-color: var(--light-bg-color);
+	}
+	.sql-explorer-content-type {
+		width: fit-content;
+	}
+	.sql-explorer-object,
+	.sql-explorer-object-active {
+		margin: 2px 0px 7px 0px;
+	}
+	.sql-explorer-object-active {
+		background-color: var(--accent-bg-color);
+	}
+	.sql-explorer-object:hover {
+		background-color: var(--accent-bg-color);
+	}
+	.sql-explorer-object-title {
+		padding: 0.3em 0 0 0.1em;
+	}
+	.sql-explorer-object-title,
+	.sql-explorer-object-title button .fa,
+	.sql-explorer-object-title .fa {
+		color: var(--main-bg-color);
+	}
+	.sql-explorer-object-title:hover,
+	.sql-explorer-object-title:hover .fa {
+		color: var(--accent-fg-color);
+	}
+	.sql-explorer-object-title button{
+		background-color: transparent;
+	}
+	.sql-explorer-object-title .fa {
+		margin-right: .3em;
+	}
+	.sql-explorer-object-details ul {
+		color: var(--main-bg-color);
+		padding-left: 2.8em;
+		padding-bottom: 0.3em;
+	}
+	.sql-explorer-object-details ul li {
+		margin-top: .5em;
+		margin-bottom: .9em;
+	}
+	.sql-explorer-object-detail {
+		color: var(--light-fg-color);
+	}
+	#sql-data {
+		position: relative;
+	}
+	#sql-data-table-wrapper {
+		position: absolute;
+		overflow: auto;
+		height: 30vh;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+}
+

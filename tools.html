@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="author" content="Automation Team">
+		<title>Studio</title>
+		<link rel="manifest" href="manifest.json">
+		<link rel="shortcut icon" type="image/x-icon" href="Content/Images/favico.png">
+		<link rel="stylesheet" href="Content/font-awesome/css/font-awesome.min.css" media="screen" >
+		<link rel="stylesheet" href="Content/Codemirror/codemirror.css" media="screen" >
+		<link rel="stylesheet" href="Content/Codemirror/addon/simplescrollbars.css" media="screen" >
+		<link rel="stylesheet" href="Content/Codemirror/themes/monokai.css" media="screen" >
+		<link rel="stylesheet" href="Content/Codemirror/themes/solarized.css" media="screen" >
+		<link rel="stylesheet" href="Content/animate/animate.min.css" media="screen" defer >
+		<link rel="stylesheet" href="Content/css/styles.css?v=0.0.4" media="screen">
+	<script>
+            var currentUser = "123456";
+            var cm;
+        </script>
+	</head>
+<body>
+	<div id="loader"
+	     style="
+		    display: block;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 1000;
+		    background-color: rgba(0, 0, 0, .8);
+		    ">
+		<h1 style=" color: #dfdfdf; text-align: center; margin-top: 30%;">
+			<i class="fa fa-circle-o-notch fa-spin"></i>
+			Loading
+		</h1>
+	</div>
+        <div id="content" ></div>
+    <script src="/tools/app.min.js?v=0.0.1"></script>
+</body>
+</html>

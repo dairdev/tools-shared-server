@@ -1,0 +1,44 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "Tools for Automation Development",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run bundling",
+    "bundling": "rollup -c -w -m | npm run watch",
+    "watch": "browser-sync start --server --index tools.html --files tools/app.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tests"
+  ],
+  "author": "Dennis Infantas",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^2.3.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "rollup": "^2.56.2",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "dependencies": {
+    "codemirror": "^5.59.1",
+    "history": "^5.0.0",
+    "preact": "^10.5.14",
+    "preact-router": "^3.2.1"
+  }
+}
